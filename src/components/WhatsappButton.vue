@@ -13,7 +13,7 @@ import {computed, defineComponent} from "vue";
 import {useStore} from "vuex";
 
 export default defineComponent({
-  name: "Whatsapp",
+  name: "WhatsappButton",
   props: {
     data: {
       type: Object,

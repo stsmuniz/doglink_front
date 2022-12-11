@@ -6,14 +6,14 @@
   </div>
 </template>
 
-<script>
+<script lang="ts">
 import {computed, defineComponent} from "vue";
 
 import YoutubePlayer from "@/components/YoutubePlayer.vue";
 import SpotifyPlayer from "@/components/SpotifyPlayer.vue";
 import ExternalLink from "@/components/ExternalLink.vue";
 import HeaderBlock from "@/components/HeaderBlock.vue";
-import Whatsapp from "@/components/Whatsapp.vue";
+import Whatsapp from "@/components/WhatsappButton.vue";
 import {useStore} from "vuex";
 
 export default defineComponent({
