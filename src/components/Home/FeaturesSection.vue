@@ -1,0 +1,68 @@
+<template>
+  <section class="features">
+    <h2>Features</h2>
+    <h3 class="headline">All your social networks in one place</h3>
+    <div class="social-networks-showcase">
+      <carousel
+          :autoplay="true"
+          :items-to-show="2"
+          :wrap-around="true"
+          :transition="4000"
+          :snap-align="center"
+          :breakpoints="socialBreakpoint"
+      >
+        <slide v-for="(item, index) in socialCarouselItems" :key="index">
+          <div class="social-network">
+            <i :class="`fab fa-${item}`"></i>
+          </div>
+        </slide>
+      </carousel>
+    </div>
+    <h3 class="headline">Unlimited links for all your needs</h3>
+    <h3 class="headline">Take your musics and videos to your audience using our Spotify and Youtube Players</h3>
+    <h3 class="headline">Let your audience get in touch with you using our Whatsapp <b>Message Me</b> button</h3>
+  </section>
+</template>
+
+<script setup lang="ts">
+import 'vue3-carousel/dist/carousel.css'
+import { Carousel, Slide } from 'vue3-carousel'
+
+const socialCarouselItems = [
+  'facebook',
+  'twitter',
+  'instagram',
+  'tiktok',
+  'youtube',
+  'spotify',
+  'github',
+  'linkedin',
+  'dev',
+  'steam'
+]
+
+const socialBreakpoint = {
+  700: {
+    itemsToShow: 5
+  }
+}
+</script>
+
+<style scoped lang="scss">
+@import "@/assets/landing_page.scss";
+.features {
+  padding: 3rem 1rem;
+  background-color: $text-secondary;
+  .headline {
+    padding: 0.5rem;
+    @media screen and (min-width: $breakpoint-desktop) {
+      font-size: 1.75rem;
+    }
+  }
+  .social-networks-showcase {
+    .social-network {
+      font-size: 4rem;
+    }
+  }
+}
+</style>
