@@ -1,7 +1,7 @@
 import axios, {AxiosInstance} from "axios";
 
 const http: AxiosInstance = axios.create({
-    baseURL: 'http://localhost:8000'
+    baseURL: 'https://api.doglink.net'
 })
 
 export default http;
