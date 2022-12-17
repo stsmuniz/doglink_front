@@ -28,12 +28,8 @@ export default createStore({
             state.primaryColor = data.primary_color;
             state.secondaryColor = data.secondary_color;
             state.profile_picture = data.profile_pic ?
-                data.profile_pic :
-                getBoringAvatar(
-                    data.custom_url,
-                    data.primary_color.replace('#', ''),
-                    data.secondary_color.replace('#', ''),
-                );
+                data.profile_pic : '@/assets/images/Portrait_Placeholder.png'
+                ;
             state.backgroundColor = data.background_color;
             state.textColor = data.text_color;
             state.username = data.custom_url;
