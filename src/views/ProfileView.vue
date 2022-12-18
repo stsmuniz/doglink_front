@@ -19,9 +19,9 @@ import SocialNetworkList from "@/components/SocialNetworkList.vue";
 import HeaderSection from "@/components/HeaderSection.vue";
 import ShareButton from "@/components/ShareButton.vue";
 import {useStore} from "vuex";
-import {useTitle} from "vue-page-title";
 import {useRoute} from "vue-router";
 import SectionItemList from "@/components/SectionItemList.vue";
+import {useHead, useSeoMeta} from "@vueuse/head";
 
 export default defineComponent({
   name: "ProfileView",
@@ -35,18 +35,40 @@ export default defineComponent({
     const store = useStore();
     const route = useRoute();
 
-    const slug = route.params.username
-    store.commit('SET_SLUG', slug)
-    store.dispatch("fetchData")
+    const slug = route.params.username;
+    store.commit('SET_SLUG', slug);
+    store.dispatch("fetchData");
 
-    const current = computed(() => store.state.username);
-    const { title } = useTitle(current);
+    const backgroundColor = computed(() => store.state.backgroundColor);
+    const textColor = computed(() => store.state.textColor);
 
-    const backgroundColor = computed(() => store.state.backgroundColor)
-    const textColor = computed(() => store.state.textColor)
+    const title =  computed(() => store.state.title ? store.state.title : store.state.username);
+    const tagline = computed(() => store.state.tagline);
+    const picture = computed(() => store.state.profile_picture)
+
+    const ogTitle = computed(() => store.state.title + ' - DogLink');
+
+    useHead({
+      title: title,
+      titleTemplate: (title?: string) => !title ? 'Default title' : `${title} - DogLink`,
+      meta: [
+        {
+          name: "description",
+          content: tagline
+        }
+      ]
+    })
+
+    useSeoMeta({
+      ogDescription: tagline,
+      ogTitle: ogTitle,
+      ogImage: picture,
+      twitterCard: 'summary',
+    })
+
     return {
-      title: computed(() => store.state.title),
-      tagline: computed(() => store.state.tagline),
+      title,
+      tagline,
       avatar: computed(() => store.state.profile_picture),
       username: title,
       backgroundColor,

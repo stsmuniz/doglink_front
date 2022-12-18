@@ -1,7 +1,7 @@
 <template>
   <router-view></router-view>
   <footer id="footer">
-    Made with <i class="fa fa-heart"></i> by <a href="https://stsmuniz.tech" target="_blank">@stsmuniz</a>
+    Get yours on <a href="https://doglink.net" target="_blank">doglink.net</a>
   </footer>
 </template>
 

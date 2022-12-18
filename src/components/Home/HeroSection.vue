@@ -3,7 +3,7 @@
     <div class="hero-text">
       <h1>Share your links<br> your way</h1>
       <p>Create, edit and share your links anywhere from your custom page</p>
-      <a href="#login" class="btn btn-cta">Get yours</a>
+      <a href="https://www.dashboard.doglink.net/login" class="btn btn-cta">Get yours</a>
     </div>
     <div class="hero-image">
       <div class="img-container">

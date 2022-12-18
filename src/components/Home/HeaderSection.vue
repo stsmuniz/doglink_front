@@ -1,10 +1,10 @@
 <template>
   <header>
     <nav>
-      <p class="home">DogLink</p>
+      <p class="home">Dog<span class="text-link">Link</span> </p>
       <ul>
         <li>
-          <a href="#login">Login</a>
+          <a href="https://dashboard.doglink.net/login">Login</a>
         </li>
       </ul>
     </nav>

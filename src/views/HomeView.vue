@@ -13,9 +13,26 @@ import ShowcaseSection from "@/components/Home/ShowcaseSection.vue";
 import FaqSection from "@/components/Home/FaqSection.vue";
 import HeroSection from "@/components/Home/HeroSection.vue";
 import HeaderSection from "@/components/Home/HeaderSection.vue"
-import {useTitle} from "vue-page-title";
+import {useHead, useSeoMeta} from "@vueuse/head";
 
-const { title } = useTitle('Home');
+useHead({
+  title: 'Home',
+  titleTemplate: (title?: string) => !title ? 'Default title' : `${title} - DogLink`,
+  meta: [
+    {
+      name: "description",
+      content: "Share your links your way"
+    }
+  ]
+})
+
+useSeoMeta({
+  description: 'Share your links your way',
+  ogDescription: 'Share your links your way',
+  ogTitle: 'Home - Doglink',
+  ogImage: '/logo.png',
+  twitterCard: 'summary',
+})
 
 </script>
 

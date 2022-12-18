@@ -11,6 +11,7 @@
     "@egjs/flicking-plugins": "^4.5.0",
     "@egjs/vue3-flicking": "^4.10.4",
     "@fortawesome/fontawesome-free": "^6.2.1",
+    "@vueuse/head": "^1.0.22",
     "axios": "^1.2.0",
     "core-js": "^3.8.3",
     "hooper": "^0.3.4",
