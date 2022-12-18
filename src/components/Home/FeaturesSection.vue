@@ -13,7 +13,7 @@
       >
         <slide v-for="(item, index) in socialCarouselItems" :key="index">
           <div class="social-network">
-            <i :class="`fab fa-${item}`"></i>
+            <i :class="`fa-brands fa-${item}`"></i>
           </div>
         </slide>
       </carousel>
@@ -38,7 +38,10 @@ const socialCarouselItems = [
   'github',
   'linkedin',
   'dev',
-  'steam'
+  'steam',
+  'pinterest',
+  'dribbble',
+  'soundcloud',
 ]
 
 const socialBreakpoint = {

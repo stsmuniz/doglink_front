@@ -5,7 +5,7 @@
     </div>
     <HeaderSection
         :tagline="tagline"
-        :username="title ? title : '@'.username"
+        :username="title ? title : '@' + username"
         :avatar="avatar">
     </HeaderSection>
     <SocialNetworkList></SocialNetworkList>
