@@ -2,7 +2,7 @@
   <section class="hero">
     <div class="hero-text">
       <h1>Share your links<br> your way</h1>
-      <p>Create, edit and share your links anywhere from your custom page</p>
+      <p>Create a website that looks great on all devices with just a few clicks</p>
       <a href="https://www.dashboard.doglink.net/login" class="btn btn-cta">Get yours</a>
     </div>
     <div class="hero-image">
@@ -21,10 +21,12 @@
   background: linear-gradient(45deg, $primary-color 0%, $secondary-color 100%);
   display: flex;
   flex-direction: column;
+  align-items: center;
   @media screen and (min-width: $breakpoint-desktop){
     flex-direction: row;
     height: 40rem;
     justify-content: center;
+    align-items: normal;
   }
   .hero-text {
     max-width: calc($breakpoint-desktop/2);

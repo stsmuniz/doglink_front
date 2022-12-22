@@ -1,6 +1,6 @@
 import { createStore } from 'vuex'
 import {getProfile} from "@/service/ProfileService";
-import {getBoringAvatar} from "@/service/BoringAvatarService";
+
 import router from "@/router";
 
 export default createStore({

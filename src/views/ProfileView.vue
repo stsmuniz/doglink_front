@@ -11,6 +11,10 @@
     <SocialNetworkList></SocialNetworkList>
     <SectionItemList></SectionItemList>
   </main>
+  <footer id="footer">
+    <span class="get-link">Get yours on <a href="https://doglink.net" target="_blank">doglink.net</a></span>
+    <router-link to="terms-of-service">Terms of Service</router-link> | <router-link to="privacy-policy">Privacy Policy</router-link>
+  </footer>
 </template>
 
 <script lang="ts">
@@ -38,9 +42,6 @@ export default defineComponent({
     const slug = route.params.username;
     store.commit('SET_SLUG', slug);
     store.dispatch("fetchData");
-
-    const backgroundColor = computed(() => store.state.backgroundColor);
-    const textColor = computed(() => store.state.textColor);
 
     const title =  computed(() => store.state.title ? store.state.title : store.state.username);
     const tagline = computed(() => store.state.tagline);
@@ -71,8 +72,10 @@ export default defineComponent({
       tagline,
       avatar: computed(() => store.state.profile_picture),
       username: title,
-      backgroundColor,
-      textColor,
+      backgroundColor: computed(() => store.state.backgroundColor),
+      textColor: computed(() => store.state.textColor),
+      primaryColor: computed(() => store.state.primaryColor),
+      secondaryColor: computed(() => store.state.secondaryColor),
     }
   },
 })
@@ -81,40 +84,58 @@ export default defineComponent({
 <style lang="scss">
 $background-color: v-bind(backgroundColor);
 $text-color: v-bind(textColor);
+$primary-color: v-bind(primaryColor);
+$secondary-color: v-bind(secondaryColor);
 
-.page-body {
-  background-color: $background-color;
-  color: $text-color;
-}
-h3 {
-  font-weight: normal;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  margin: 0 auto;
-}
-.page-body {
-  flex-grow: 1;
-  .share-button-container {
-    width: 90%;
-    display: flex;
-    padding-top: 1.5rem;
-    flex-direction: row-reverse;
-    margin: 0 auto;
-    @media screen and (min-width: 960px) {
-      width: 60%;
+#app {
+  .page-body {
+    flex-grow: 1;
+    color: $text-color;
+    background-color: $background-color;
+
+    .share-button-container {
+      width: 90%;
+      display: flex;
+      padding-top: 1.5rem;
+      flex-direction: row-reverse;
+      margin: 0 auto;
+      @media screen and (min-width: 960px) {
+        width: 60%;
+      }
+    }
+    h3 {
+      font-weight: normal;
+    }
+    ul {
+      list-style-type: none;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      margin: 0 auto;
+    }
+
+    .external-link-container {
+      padding: 1rem 0;
+      display: flex;
+      margin: 0 auto;
+      justify-content: center;
+      flex-direction: column;
+      gap: 1rem;
     }
   }
-  .external-link-container {
+  #footer {
+    background-color: $secondary-color;
+    color: $primary-color;
+    flex-grow: 0;
+    flex-shrink: 0;
     padding: 1rem 0;
-    display: flex;
-    margin: 0 auto;
-    justify-content: center;
-    flex-direction: column;
-    gap: 1rem;
+    .get-link {
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    a {
+      color: $primary-color;
+    }
   }
 }
 </style>

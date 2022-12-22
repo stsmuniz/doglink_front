@@ -18,8 +18,9 @@
         </slide>
       </carousel>
     </div>
-    <h3 class="headline">Unlimited links for all your needs</h3>
-    <h3 class="headline">Take your musics and videos to your audience using our Spotify and Youtube Players</h3>
+    <h3 class="headline">Easy to use drag-and-drop website builder</h3>
+    <h3 class="headline">Mobile friendly websites that work on all devices</h3>
+    <h3 class="headline">Social media integration so you can share your site on Facebook, Twitter and Instagram</h3>
     <h3 class="headline">Let your audience get in touch with you using our Whatsapp <b>Message Me</b> button</h3>
   </section>
 </template>

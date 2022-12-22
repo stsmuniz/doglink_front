@@ -1,7 +1,7 @@
 <template>
   <section class="showcase">
     <h2>Showcase</h2>
-    <h3 class="headline">Customize your page and make it trully yours</h3>
+    <h3 class="headline">See how your website can look like</h3>
     <carousel :breakpoints="carouselBreakpoints" :settings="carouselSettings">
       <slide v-for="(item, index) in carouselItems" :key="index">
         <img :src="item.image">

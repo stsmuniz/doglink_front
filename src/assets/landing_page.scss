@@ -10,6 +10,7 @@ $text-secondary: #fafafa;
   flex-grow: 1;
   text-align: center;
   color: $text-primary;
+
   h2 {
     font-size: 3rem;
   }
@@ -18,6 +19,13 @@ $text-secondary: #fafafa;
 .text-link {
   color: #0d6efd;
   text-decoration: underline;
+}
+
+.page-inner {
+  text-align: left;
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
 .btn {

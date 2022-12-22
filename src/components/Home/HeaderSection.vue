@@ -31,14 +31,20 @@ header {
     margin: 0.5rem;
   }
   nav {
-    padding: 0.5rem 0;
+    padding: 0.5rem;
+    @media screen and (min-width: $breakpoint-desktop){
+      padding: 0.5rem 0;
+    }
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    width: 100vw;
+    width: 90vw;
     max-width: $breakpoint-desktop-lg;
     margin: 0 auto;
     ul {
+      list-style-type: none;
+      display: flex;
+      flex-direction: row;
       margin: 0;
       padding: 0 1rem;
       li {

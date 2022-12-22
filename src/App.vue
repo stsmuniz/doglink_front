@@ -1,8 +1,5 @@
 <template>
   <router-view></router-view>
-  <footer id="footer">
-    Get yours on <a href="https://doglink.net" target="_blank">doglink.net</a>
-  </footer>
 </template>
 
 
@@ -44,15 +41,5 @@ body {
   min-height: 100%;
   display: flex;
   flex-direction: column;
-  #footer {
-    background-color: $secondary-color;
-    color: $primary-color;
-    flex-grow: 0;
-    flex-shrink: 0;
-    padding: 1rem 0;
-    a {
-      color: $primary-color;
-    }
-  }
 }
 </style>

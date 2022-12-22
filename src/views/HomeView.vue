@@ -1,11 +1,14 @@
 <template>
+  <HeaderSection />
   <div class="page-body">
-    <HeaderSection />
     <hero-section />
     <features-section />
     <showcase-section />
     <faq-section />
   </div>
+  <footer id="footer">
+    <router-link to="terms-of-service">Terms of Service</router-link> | <router-link to="privacy-policy">Privacy Policy</router-link>
+  </footer>
 </template>
 <script setup lang="ts">
 import FeaturesSection from "@/components/Home/FeaturesSection.vue";
